@@ -104,7 +104,6 @@
     <Compile Include="..\CodeQuasar.Xamarin.Plugins.Location\CrossLocationStatusListener.cs">
       <Link>CrossLocationStatusListener.cs</Link>
     </Compile>
-    <Compile Include="GpsStatusCallback.cs" />
     <Compile Include="LocationStatusBroadcastReceiver.cs" />
     <Compile Include="LocationStatusListener.cs" />
     <Compile Include="MainApplication.cs" />
