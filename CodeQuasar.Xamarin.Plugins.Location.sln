@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{26257ABA-E064-4729-8197-AEECF81A3BCE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Targets", "Targets", "{4E360CDE-AB7D-4CEF-87A5-751B0F7B306C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6EA994DB-DF1A-4A8E-895D-DCF69CEE6C6C}"
+	ProjectSection(SolutionItems) = preProject
+		nuget\CodeQuasar.Xamarin.Plugins.Location.nuspec = nuget\CodeQuasar.Xamarin.Plugins.Location.nuspec
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeQuasar.Xamarin.Plugins.Location.Android", "src\CodeQuasar.Xamarin.Plugins.Location.Android\CodeQuasar.Xamarin.Plugins.Location.Android.csproj", "{69A38951-4E8C-42F7-AD18-18E2D3AFFC24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeQuasar.Xamarin.Plugins.Location.Abstractions", "src\CodeQuasar.Xamarin.Plugins.Location.Abstractions\CodeQuasar.Xamarin.Plugins.Location.Abstractions.csproj", "{F4BD0359-8EF0-46A6-BA9C-91DBDDE277C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeQuasar.Xamarin.Plugins.Location", "src\CodeQuasar.Xamarin.Plugins.Location\CodeQuasar.Xamarin.Plugins.Location.csproj", "{8A950FB7-43A0-465B-8B79-74726EC718ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69A38951-4E8C-42F7-AD18-18E2D3AFFC24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69A38951-4E8C-42F7-AD18-18E2D3AFFC24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69A38951-4E8C-42F7-AD18-18E2D3AFFC24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69A38951-4E8C-42F7-AD18-18E2D3AFFC24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4BD0359-8EF0-46A6-BA9C-91DBDDE277C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4BD0359-8EF0-46A6-BA9C-91DBDDE277C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4BD0359-8EF0-46A6-BA9C-91DBDDE277C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4BD0359-8EF0-46A6-BA9C-91DBDDE277C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A950FB7-43A0-465B-8B79-74726EC718ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A950FB7-43A0-465B-8B79-74726EC718ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A950FB7-43A0-465B-8B79-74726EC718ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A950FB7-43A0-465B-8B79-74726EC718ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{69A38951-4E8C-42F7-AD18-18E2D3AFFC24} = {4E360CDE-AB7D-4CEF-87A5-751B0F7B306C}
+		{F4BD0359-8EF0-46A6-BA9C-91DBDDE277C8} = {26257ABA-E064-4729-8197-AEECF81A3BCE}
+		{8A950FB7-43A0-465B-8B79-74726EC718ED} = {26257ABA-E064-4729-8197-AEECF81A3BCE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C9092A2E-493F-4380-927F-2DBD9A589802}
+	EndGlobalSection
+EndGlobal
