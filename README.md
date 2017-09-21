@@ -1,1 +1,2 @@
 # CodeQuasar.Xamarin.Plugins.Location
+[![Build status](https://ci.appveyor.com/api/projects/status/fdptnvdb1690aonr?svg=true)](https://ci.appveyor.com/project/randalvance/codequasar-xamarin-plugins-location)

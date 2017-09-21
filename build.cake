@@ -13,6 +13,7 @@ var version = EnvironmentVariable ("APPVEYOR_BUILD_VERSION") ?? Argument("versio
 
 // Define directories.
 var buildDir = Directory("./src/CodeQuasar.Xamarin.Plugins.Location/bin") + Directory(configuration);
+var artifactDir = Directory("./Build");
 
 //////////////////////////////////////////////////////////////////////
 // TASKS
@@ -22,6 +23,7 @@ Task("Clean")
     .Does(() =>
 {
     CleanDirectory(buildDir);
+	CleanDirectory(artifactDir);
 });
 
 Task("Restore-NuGet-Packages")
