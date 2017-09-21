@@ -6,7 +6,7 @@ environment:
   MyGetToken:
     secure: CpBX2cPPehWeN6R2fGyKsX+ro5ohDCxP7U9EedCnL0fAR2fgB7yPQd6rkfNJswa0
 build_script:
-- ps: .\bootstrapper.ps1 -Target Default -Configuration Release
+- ps: .\build.ps1 -Target Default -Configuration Release
 artifacts:
 - path: ./Build/nuget/*.nupkg
   name: NuGet
