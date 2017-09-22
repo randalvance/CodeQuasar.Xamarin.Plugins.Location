@@ -10,7 +10,6 @@ artifacts:
   name: NuGet
   
 for:
-
 -
   branches:
     only: 
