@@ -5,7 +5,7 @@
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
-var version = EnvironmentVariable ("APPVEYOR_BUILD_VERSION") ?? Argument("version", "1.0.0");
+var version = EnvironmentVariable ("APPVEYOR_BUILD_VERSION") ?? Argument("version", "0.0.9999");
 
 //////////////////////////////////////////////////////////////////////
 // PREPARATION
@@ -57,23 +57,24 @@ Task ("NuGet")
 {
     if(!DirectoryExists("./Build/nuget/"))
         CreateDirectory("./Build/nuget");
-    
-	Console.WriteLine($"Using version {version}");
 	
-	try
-	{
-		NuGetPack ("./nuget/CodeQuasar.Xamarin.Plugins.Location.nuspec", new NuGetPackSettings { 
-			Version = version,
-			Verbosity = NuGetVerbosity.Detailed,
-			OutputDirectory = "./Build/nuget/"
-		});
-	}
-	catch (Exception ex)
-	{
-		Console.WriteLine(ex.Message);
-	}
+	NuGetPack ("./nuget/CodeQuasar.Xamarin.Plugins.Location.nuspec", new NuGetPackSettings { 
+		Version = version,
+		Verbosity = NuGetVerbosity.Detailed,
+		OutputDirectory = "./Build/nuget/"
+	});
 });
 
+Task ("DeployToNuget")
+	.IsDependentOn("NuGet")
+	.Does(() =>
+{
+	var source = EnvironmentVariable ("NUGET_SOURCE");
+	var token = EnvironmentVariable ("NUGET_TOKEN");
+	var packages = GetFiles(artifactDir.ToString() + "/nuget/*.nupkg");
+	
+	NuGetPush(packages, new NuGetPushSettings { Source = source, ApiKey = token });
+});
 
 Task("Run-Unit-Tests")
     .IsDependentOn("Build")
@@ -89,7 +90,7 @@ Task("Run-Unit-Tests")
 //////////////////////////////////////////////////////////////////////
 
 Task("Default")
-    .IsDependentOn("NuGet");
+    .IsDependentOn("DeployToNuget");
 
 //////////////////////////////////////////////////////////////////////
 // EXECUTION

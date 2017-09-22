@@ -2,11 +2,31 @@ version: 1.0.{build}
 branches:
   only:
   - master
-environment:
-  MyGetToken:
-    secure: CpBX2cPPehWeN6R2fGyKsX+ro5ohDCxP7U9EedCnL0fAR2fgB7yPQd6rkfNJswa0
+  - dev
 build_script:
-- ps: .\build.ps1 -Target Default -Configuration Release
+  - ps: .\build.ps1 -Target Default -Configuration Release
 artifacts:
 - path: ./Build/nuget/*.nupkg
   name: NuGet
+  
+for:
+
+-
+  branches:
+    only: 
+    - master
+    
+  environment:
+    NUGET_SOURCE: https://www.nuget.org/api/v2/package
+    NUGET_TOKEN:
+       secure: fUgz4NqzMHLqis8Bs1MHVAvkrN05MF+WH50d7qlmGYPMV6YmDvn+F6a7xv+7bdkl
+
+-
+  branches:
+    only:
+    - dev
+    
+  environment:
+    NUGET_SOURCE: https://www.myget.org/F/codequasar/api/v3/index.json
+    NUGET_TOKEN:
+       secure: CpBX2cPPehWeN6R2fGyKsX+ro5ohDCxP7U9EedCnL0fAR2fgB7yPQd6rkfNJswa0
