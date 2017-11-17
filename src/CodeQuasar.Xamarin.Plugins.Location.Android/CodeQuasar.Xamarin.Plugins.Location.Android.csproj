@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -116,7 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CodeQuasar.Xamarin.Plugins.Location.Abstractions\CodeQuasar.Xamarin.Plugins.Location.Abstractions.csproj">
-      <Project>{f4bd0359-8ef0-46a6-ba9c-91dbdde277c8}</Project>
+      <Project>{13d85bc6-b41f-4755-8690-2408cae0731f}</Project>
       <Name>CodeQuasar.Xamarin.Plugins.Location.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
