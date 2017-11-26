@@ -24,6 +24,7 @@ for:
   branches:
     only:
     - dev
+    - net-standard
     
   environment:
     NUGET_SOURCE: https://www.myget.org/F/codequasar/api/v3/index.json
