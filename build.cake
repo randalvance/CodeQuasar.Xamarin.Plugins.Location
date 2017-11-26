@@ -5,7 +5,7 @@
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
-var buildNumber = Int32.Prase(EnvironmentVariable ("APPVEYOR_BUILD_VERSION") ?? Argument("version", "2"));
+var buildNumber = Int32.Parse(EnvironmentVariable ("APPVEYOR_BUILD_VERSION") ?? Argument("version", "2"));
 var version = string.Format("1.0.1-alpha-{0:D4}", buildNumber);
 
 //////////////////////////////////////////////////////////////////////
