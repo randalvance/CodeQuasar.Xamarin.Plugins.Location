@@ -24,7 +24,7 @@ namespace CodeQuasar.Xamarin.Plugins.Location
 
         static ILocationStatusListener Create()
         {
-#if PORTABLE
+#if NETSTANDARD1_0
             return null;
 #else
             return new LocationStatusListener();
