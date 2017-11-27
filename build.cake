@@ -1,11 +1,14 @@
 #tool nuget:?package=NUnit.ConsoleRunner&version=3.4.0
+
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
 //////////////////////////////////////////////////////////////////////
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
-var version = EnvironmentVariable ("APPVEYOR_BUILD_VERSION") ?? Argument("version", "0.0.9999");
+var version = GetVersion();
+
+Information($"Version to use is {version}");
 
 //////////////////////////////////////////////////////////////////////
 // PREPARATION
@@ -36,7 +39,7 @@ Task("Restore-NuGet-Packages")
 Task("Build")
     .IsDependentOn("Restore-NuGet-Packages")
     .Does(() =>
-{
+{	
     if(IsRunningOnWindows())
     {
       // Use MSBuild
@@ -97,3 +100,27 @@ Task("Default")
 //////////////////////////////////////////////////////////////////////
 
 RunTarget(target);
+
+//////////////////////////////////////////////////////////////////////
+// Utilities
+//////////////////////////////////////////////////////////////////////
+string GetVersion()
+{
+	var buildNumberString = EnvironmentVariable ("APPVEYOR_BUILD_VERSION") ?? Argument("version", "1.0.1-alpha-2");
+	var versionRegex = @"(\d+\.\d+\.(\d+))((\-[A-Za-z]+\-)(\d+))*";
+	var regex = new System.Text.RegularExpressions.Regex(versionRegex);
+	var match = regex.Match(buildNumberString);
+	var groups = match.Groups.Cast<System.Text.RegularExpressions.Group>().Where(g => !string.IsNullOrEmpty(g.Value)).ToList();
+	
+	if (groups.Count > 3)
+	{
+		var semVer = groups[1];
+		var suffix = groups[4];
+		var buildNumber = groups[5];
+		var version = $"{semVer}{suffix}{buildNumber.Value.PadLeft(4, '0')}";
+		
+		return version;
+	}
+	
+	return buildNumberString;
+}

@@ -20,7 +20,7 @@
   </metadata>
   <files>
     <!--Core-->
-    <file src="..\src\CodeQuasar.Xamarin.Plugins.Location\bin\Release\CodeQuasar.Xamarin.Plugins.Location.*" target="lib\portable-net45+win8+wpa81+wp8" />
+    <file src="..\src\CodeQuasar.Xamarin.Plugins.Location\bin\Release\netstandard1.0\CodeQuasar.Xamarin.Plugins.Location.*" target="lib\netstandard1.0" />
 
     <!--Xamarin.Android-->
     <file src="..\src\CodeQuasar.Xamarin.Plugins.Location.Android\bin\Release\CodeQuasar.Xamarin.Plugins.Location.*" target="lib\monoandroid" />
