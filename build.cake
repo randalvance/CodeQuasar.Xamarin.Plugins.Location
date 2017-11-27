@@ -77,6 +77,7 @@ Task ("DeployToNuget")
 	var packages = GetFiles(artifactDir.ToString() + "/nuget/*.nupkg");
 	
 	Information("NUGET_SOURCE = " + source);
+	Information("NUGET_TOKEN = " + token);
 	
 	NuGetPush(packages, new NuGetPushSettings { Source = source, ApiKey = token });
 });
